@@ -74,7 +74,7 @@ Ensured robust primary and foreign key relationships between tables for data int
 
 Validated data population with over 30 records per table.
 
-Technologies Used
+Technologies Used:
 
 Programming Languages: SQL
 

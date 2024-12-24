@@ -1,0 +1,1614 @@
+
+--                                              SQL PROJECTS                        Name: U.Rajkumar
+--                                                                                  Phno:9360550686  
+--                                                                                  email:u.rajkumar2001@gmail.com
+                                                        
+--                                          TireTrack Management System
+
+
+
+select * from Raw_Materials;
+select * from supplierss;
+select * from Product_Categories;
+select * from Production_Steps;
+select * from Production_Batches;
+select * from Tires;
+select * from Quality_Control;
+select * from Customerssss;
+select * from Sales_Orders;
+select * from Shippers;
+select * from Shipments;
+Select * from Payments;
+select * from Financial_Transactions;
+select * from  Equipment_Maintenance ;
+
+
+
+--Data Dictionary
+select * from user_tables;
+
+
+
+
+--Table-1
+
+------Creating Raw_Materials table------------
+
+
+CREATE TABLE Raw_Materials (
+    material_id NUMBER,
+    material_name VARCHAR2(100) NOT NULL,
+    quantity_in_stock NUMBER,
+    supplier_id NUMBER,
+    unit_price NUMBER(10, 2),
+    CONSTRAINT pk_raw_materials PRIMARY KEY (material_id),
+    CONSTRAINT fk_raw_material_supplier FOREIGN KEY (supplier_id) REFERENCES Supplierss(supplier_id)
+);
+
+
+--Insert Data into  Raw_Materials    
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (1, 'Rubber', 500, 1, 150.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (2, 'Steel Wire', 300, 2, 100.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (3, 'Carbon Black', 250, 3, 200.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (4, 'Silica', 400, 4, 180.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (5, 'Plasticizers', 350, 5, 120.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (6, 'Antioxidants', 200, 6, 150.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (7, 'Resins', 600, 7, 140.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (8, 'Oil Additives', 450, 8, 110.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (9, 'Cure Systems', 700, 9, 220.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (10, 'Textile Fabrics', 500, 10, 90.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (11, 'Tread Compounds', 600, 11, 160.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (12, 'Adhesives', 400, 12, 130.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (13, 'Lubricants', 250, 13, 110.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (14, 'Vulcanizing Agents', 350, 14, 180.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (15, 'Tire Cords', 450, 15, 160.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (16, 'Black Carbon', 400, 16, 190.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (17, 'Polymers', 550, 17, 170.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (18, 'Foaming Agents', 600, 18, 140.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (19, 'Pigments', 700, 19, 160.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (20, 'Tire Fillers', 500, 20, 210.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (21, 'Bonding Agents', 450, 21, 190.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (22, 'Cement', 350, 22, 100.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (23, 'Protective Coatings', 400, 23, 150.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (24, 'Polyurethane', 300, 24, 200.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (25, 'Glass Fiber', 250, 25, 180.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (26, 'Bentonite Clay', 400, 26, 220.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (27, 'Sulfur', 500, 27, 150.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (28, 'Zinc Oxide', 350, 28, 140.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (29, 'Calcium Carbonate', 450, 29, 110.00);
+
+INSERT INTO Raw_Materials (material_id, material_name, quantity_in_stock, supplier_id, unit_price) 
+VALUES (30, 'Reinforced Nylon', 600, 30, 180.00);
+
+select * from Raw_Materials;
+
+
+--Table-2
+
+---Creating the Supplierss table-------
+
+CREATE TABLE Supplierss (
+    supplier_id NUMBER,
+    name VARCHAR2(100) NOT NULL,
+    contact_person VARCHAR2(100),
+    phone_number VARCHAR2(15),
+    email VARCHAR2(100),
+    address VARCHAR2(200),
+    CONSTRAINT pk_suppliers PRIMARY KEY (supplier_id),
+    CONSTRAINT uq_email UNIQUE (email),
+    CONSTRAINT uq_phone_number UNIQUE (phone_number)
+);
+
+--Insert Data into Supplierss 
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (1, 'RubberTech Pvt Ltd', 'Arun Kumar', '9876543210', 'contact@rubbertech.com', 'No. 15, Industrial Area, Chennai');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (2, 'SteelTire Components', 'Priya Nair', '9876543211', 'support@steeltire.com', 'No. 32, Steel Street, Coimbatore');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (3, 'ChemPro Industries', 'Vikram Singh', '9876543212', 'info@chempro.com', 'Plot No. 12, Chemical Park, Madurai');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (4, 'WheelMasters Ltd', 'Lakshmi Rani', '9876543213', 'sales@wheelmasters.com', '22, Mechanical Nagar, Trichy');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (5, 'RubberMix Solutions', 'Karthik Ramesh', '9876543214', 'contact@rubbermix.com', '12, Rubber Town, Salem');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (6, 'TireParts Suppliers', 'Anjali Iyer', '9876543215', 'service@tireparts.com', '18, Auto Street, Erode');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (7, 'TreadTec Enterprises', 'Saravanan Raj', '9876543216', 'support@treadtec.com', '10, Textile Lane, Tirupur');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (8, 'Rubber & Co', 'Nandhini Kumar', '9876543217', 'sales@rubberco.com', '5, Industrial Estate, Vellore');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (9, 'TyreForge Industries', 'Ravi Kumar', '9876543218', 'info@tyreforge.com', '30, Engineering Complex, Pondicherry');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (10, 'RubberTech Solutions', 'Meena V', '9876543219', 'contact@rubbertechsol.com', '6, Industrial Road, Madurai');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (11, 'RimWorld Components', 'Sundar V', '9876543220', 'sales@rimworld.com', '21, Alloy Lane, Cuddalore');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (12, 'TirePro Rubber', 'Aishwarya G', '9876543221', 'service@tireprorubber.com', '8, Rubber Avenue, Dindigul');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (13, 'SteelCraft Industries', 'Kumar Rajendran', '9876543222', 'sales@steelcraft.com', '3, Metal Works, Tirunelveli');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (14, 'TireTech Enterprises', 'Vijayakumar R', '9876543223', 'info@tiretech.com', '15, Industrial Area, Karur');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (15, 'AutoParts Ltd', 'Harini V', '9876543224', 'contact@autoparts.com', '24, Industrial Complex, Thanjavur');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (16, 'MaxTread Tyres', 'Gokul P', '9876543225', 'sales@maxtread.com', '19, Rubber Avenue, Kanchipuram');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (17, 'PerfectRubber Pvt Ltd', 'Rajesh N', '9876543226', 'contact@perfectrubber.com', '14, Industrial Road, Tenkasi');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (18, 'CraftTire Systems', 'Shalini M', '9876543227', 'service@crafttire.com', '7, Alloy Lane, Villupuram');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (19, 'WheelWorks', 'Nithya S', '9876543228', 'info@wheelworks.com', '20, Tyre Street, Karaikal');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (20, 'MouldTech Industries', 'Vignesh T', '9876543229', 'support@mouldtech.com', '11, Rubber Park, Pudukottai');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (21, 'GlobalTire Suppliers', 'Jothi A', '9876543230', 'sales@globaltires.com', '4, Auto Hub, Tirupur');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (22, 'TireGlobal Enterprises', 'Suresh M', '9876543231', 'info@tireglobal.com', '13, Manufacturing Lane, Virudhunagar');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (23, 'MetalWorks Co.', 'Rajendran T', '9876543232', 'contact@metalworks.com', '9, Alloy Complex, Sivakasi');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (24, 'TireTech Innovations', 'Deepa R', '9876543233', 'service@tiretechinnovations.com', '18, Tyre Lane, Kanchipuram');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (25, 'TyreCraft Pvt Ltd', 'Subramaniam R', '9876543234', 'sales@tyrecraft.com', '10, Industrial Avenue, Madurai');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (26, 'AutoMotive Tyres', 'Madhavi A', '9876543235', 'contact@automotivetires.com', '21, Engineering Street, Pondicherry');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (27, 'TechRubber Ltd', 'Amit B', '9876543236', 'info@techrubber.com', '12, Tyre Road, Vellore');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (28, 'SteelRim Systems', 'Sundari P', '9876543237', 'sales@steelrim.com', '16, Alloy Complex, Thoothukudi');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (29, 'TyreMakers Pvt Ltd', 'Gokul S', '9876543238', 'service@tyremakers.com', '30, Auto Hub, Tanjore');
+
+INSERT INTO Supplierss (supplier_id, name, contact_person, phone_number, email, address)
+VALUES (30, 'TreadMakers Ltd', 'Selvam R', '9876543239', 'info@treadmakers.com', '17, Rubber Park, Salem');
+
+select * from supplierss;
+
+
+--Table-3
+
+---------Creating Product_Categories table---------------
+
+
+CREATE TABLE Product_Categories (
+    category_id NUMBER,
+    category_name VARCHAR2(100) NOT NULL,
+    description VARCHAR2(255),
+    CONSTRAINT pk_product_categories PRIMARY KEY (category_id),
+    CONSTRAINT uq_category_name UNIQUE (category_name)
+);
+
+
+--Insert Data into Product_Categories
+
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (1, 'Passenger Car Tires', 'Tires designed for everyday vehicles, offering a balance between comfort and performance.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (2, 'Truck Tires', 'Heavy-duty tires designed for commercial vehicles, ensuring durability and load-bearing capacity.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (3, 'Motorcycle Tires', 'Tires designed specifically for motorcycles, providing superior grip and handling.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (4, 'Agricultural Tires', 'Specialized tires for farm equipment and agricultural machinery.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (5, 'Construction Tires', 'Tires for construction vehicles like bulldozers, cranes, and excavators.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (6, 'Off-road Tires', 'Durable tires for vehicles designed for challenging off-road conditions.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (7, 'Industrial Tires', 'Heavy-duty tires designed for industrial machinery and equipment.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (8, 'Radial Ply Tires', 'Tires with radial ply construction offering better fuel efficiency and durability.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (9, 'Bias Ply Tires', 'Tires with bias-ply construction offering strength and resilience for off-road and heavy-duty vehicles.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (10, 'Run-Flat Tires', 'Tires designed to continue functioning even after losing air pressure.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (11, 'Tubeless Tires', 'Tires designed without an inner tube, suitable for cars, motorcycles, and bicycles.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (12, 'Tire Valves', 'Valves used for tire inflation and pressure regulation.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (13, 'Wheel Rims', 'Metal rims that house the tire and provide structural support.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (14, 'Tire Balancers', 'Machines used to balance tires and avoid vibrations or uneven wear.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (15, 'Tire Covers', 'Protective covers used to shield tires from weather elements when not in use.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (16, 'Winter Tires', 'Specialized tires designed for enhanced performance in winter conditions, such as snow and ice.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (17, 'All-Terrain Tires', 'Tires suitable for both on-road and off-road vehicles, offering versatility.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (18, 'Mud-Terrain Tires', 'Heavy-duty tires designed for off-road vehicles operating in muddy conditions.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (19, 'Performance Tires', 'Tires designed to provide high performance in terms of speed and handling.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (20, 'Eco Tires', 'Tires designed for fuel efficiency and reducing environmental impact.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (21, 'Truck Radial Tires', 'Radial ply tires designed specifically for heavy-duty truck applications.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (22, 'Trailer Tires', 'Tires designed specifically for use on trailers, providing durability for long hauls.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (23, 'Bicycle Tires', 'Tires for bicycles, designed for durability and grip on various surfaces.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (24, 'Tire Repair Kits', 'Kits used for repairing punctured or damaged tires.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (25, 'High-Performance Racing Tires', 'Tires designed for racing vehicles, offering extreme grip and performance on race tracks.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (26, 'Tire Chains', 'Chains that are fitted to tires for added traction in snow or icy conditions.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (27, 'Tire Pressure Monitors', 'Devices that monitor the air pressure of tires for better safety and performance.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (28, 'Tire Sealant', 'A liquid used to seal small punctures in tires and prevent air loss.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (29, 'Retreaded Tires', 'Tires that have been refurbished with a new tread to extend their lifespan.');
+
+INSERT INTO Product_Categories (category_id, category_name, description) 
+VALUES (30, 'Tire Alignment Kits', 'Tools and equipment used to align tires for optimal vehicle performance and tire lifespan.');
+
+
+select * from Product_Categories;
+
+--Table-4
+
+
+---------------Creating Production_Steps table-----------------
+
+CREATE TABLE Production_Steps (
+    step_id NUMBER,
+    step_name VARCHAR2(100) NOT NULL,
+    step_description VARCHAR2(255),
+    estimated_duration NUMBER,
+    CONSTRAINT pk_production_steps PRIMARY KEY (step_id)
+);
+
+--Insert Data into Production_Steps 
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (1, 'Tire Design', 'Designing the tire specifications, including size and tread pattern', 5);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (2, 'Material Preparation', 'Preparing raw materials like rubber, steel wire, and carbon black', 4);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (3, 'Mixing', 'Mixing the raw materials to create the rubber compound', 6);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (4, 'Extrusion', 'Extruding the rubber compound into sheets or treads', 5);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (5, 'Calendering', 'Rolling the rubber sheets into the desired thickness for tire layers', 7);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (6, 'Bead Construction', 'Forming the tire bead which provides the connection to the wheel', 3);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (7, 'Building', 'Layering the rubber sheets and constructing the tire body', 8);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (8, 'Curing', 'Heating the tire assembly in a mold to cure the rubber and give it shape', 10);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (9, 'Inspection', 'Inspecting the tire for defects and quality assurance', 4);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (10, 'Trimming', 'Trimming excess rubber and smoothing the tire edges', 3);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (11, 'Testing', 'Performing various tests such as pressure and durability tests on the tire', 6);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (12, 'Marking', 'Marking the tire with branding, size, and other identifiers', 2);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (13, 'Balancing', 'Balancing the tire to ensure even wear during use', 4);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (14, 'Finishing', 'Final visual inspection and cleaning of the tire', 3);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (15, 'Packaging', 'Packing the tires for shipment', 4);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (16, 'Mold Preparation', 'Preparing molds for curing the tire', 5);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (17, 'Reinforcement', 'Adding reinforcing layers of textile and steel wires to the tire structure', 6);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (18, 'Tread Placement', 'Placing the tread compound on the outer surface of the tire', 5);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (19, 'Vulcanization', 'Final curing process to permanently bond the rubber and reinforcing elements', 8);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (20, 'Quality Control', 'Conducting further quality control checks on dimensions, balance, and uniformity', 5);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (21, 'Pressure Testing', 'Testing tire pressure tolerance and ability to handle loads', 7);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (22, 'X-Ray Inspection', 'Conducting X-ray inspection to detect internal flaws or inconsistencies', 6);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (23, 'Surface Inspection', 'Visual inspection for surface defects such as cracks or unevenness', 3);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (24, 'Tire Pressing', 'Pressing the rubber layers together before curing', 4);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (25, 'Edge Cutting', 'Cutting the tire’s edges to achieve the correct dimensions', 2);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (26, 'Injection Molding', 'Injection molding for creating tire sidewalls', 5);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (27, 'Packaging Preparation', 'Preparing tires for shipment, including cleaning and labeling', 3);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (28, 'Shipping', 'Shipping the completed tires to the distribution centers or retailers', 7);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (29, 'Tire Mounting', 'Mounting the tire on rims for testing or shipment', 4);
+
+INSERT INTO Production_Steps (step_id, step_name, step_description, estimated_duration)
+VALUES (30, 'Final Assembly', 'Final assembly of the tire with all components and preparation for curing', 8);
+
+
+
+--Table-5
+
+-----Creating Production_Batches table------
+
+CREATE TABLE Production_Batches (
+    batch_id NUMBER,
+    batch_number VARCHAR2(100) NOT NULL,
+    start_date DATE DEFAULT SYSDATE,
+    end_date DATE,
+    quantity_produced NUMBER,
+    step_id NUMBER,
+    CONSTRAINT pk_production_batches PRIMARY KEY (batch_id),
+    CONSTRAINT fk_batch_step FOREIGN KEY (step_id) REFERENCES Production_Steps(step_id)
+);
+
+select * from Production_Batches;
+
+
+--Insert Data into Production_Batches
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (1, 'BATCH001', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1000, 1);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (2, 'BATCH002', SYSDATE, SYSDATE + INTERVAL '1' DAY, 950, 2);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (3, 'BATCH003', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1050, 3);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (4, 'BATCH004', SYSDATE, SYSDATE + INTERVAL '1' DAY, 900, 4);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (5, 'BATCH005', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1100, 5);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (6, 'BATCH006', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1020, 6);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (7, 'BATCH007', SYSDATE, SYSDATE + INTERVAL '1' DAY, 950, 7);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (8, 'BATCH008', SYSDATE, SYSDATE + INTERVAL '1' DAY, 980, 8);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (9, 'BATCH009', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1100, 9);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (10, 'BATCH010', SYSDATE, SYSDATE + INTERVAL '1' DAY, 950, 10);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (11, 'BATCH011', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1050, 11);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (12, 'BATCH012', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1000, 12);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (13, 'BATCH013', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1070, 13);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (14, 'BATCH014', SYSDATE, SYSDATE + INTERVAL '1' DAY, 980, 14);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (15, 'BATCH015', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1050, 15);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (16, 'BATCH016', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1100, 16);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (17, 'BATCH017', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1030, 17);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (18, 'BATCH018', SYSDATE, SYSDATE + INTERVAL '1' DAY, 950, 18);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (19, 'BATCH019', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1000, 19);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (20, 'BATCH020', SYSDATE, SYSDATE + INTERVAL '1' DAY, 970, 20);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (21, 'BATCH021', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1050, 21);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (22, 'BATCH022', SYSDATE, SYSDATE + INTERVAL '1' DAY, 990, 22);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (23, 'BATCH023', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1020, 23);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (24, 'BATCH024', SYSDATE, SYSDATE + INTERVAL '1' DAY, 980, 24);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (25, 'BATCH025', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1060, 25);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (26, 'BATCH026', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1010, 26);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (27, 'BATCH027', SYSDATE, SYSDATE + INTERVAL '1' DAY, 990, 27);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (28, 'BATCH028', SYSDATE, SYSDATE + INTERVAL '1' DAY, 950, 28);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (29, 'BATCH029', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1020, 29);
+
+INSERT INTO Production_Batches (batch_id, batch_number, start_date, end_date, quantity_produced, step_id)
+VALUES (30, 'BATCH030', SYSDATE, SYSDATE + INTERVAL '1' DAY, 1080, 30);
+
+
+
+select * from Production_Batches;
+
+--Table-6
+
+----------Creating Tires Table---------------------
+
+CREATE TABLE Tires (
+    tire_id NUMBER,
+    tire_type VARCHAR2(100) NOT NULL,
+    tire_size VARCHAR2(50) NOT NULL,
+    tire_category_id NUMBER,
+    production_batch_id NUMBER,
+    price NUMBER(10, 2),
+    quantity_in_stock NUMBER,
+    CONSTRAINT pk_tires PRIMARY KEY (tire_id),
+    CONSTRAINT fk_tire_category FOREIGN KEY (tire_category_id) REFERENCES Product_Categories(category_id),
+    CONSTRAINT fk_production_batch FOREIGN KEY (production_batch_id) REFERENCES Production_Batches(batch_id)
+);
+
+--Insert Data into Tires
+
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (1, 'Radial', '215/65R16', 1, 1, 120.50, 500);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (2, 'Radial', '225/60R16', 2, 2, 135.75, 450);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (3, 'Bias Ply', '235/75R15', 3, 3, 100.00, 350);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (4, 'All-Season', '195/65R15', 4, 4, 90.25, 600);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (5, 'Winter', '225/50R17', 1, 5, 150.00, 550);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (6, 'Mud-Terrain', '255/70R16', 2, 6, 105.75, 300);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (7, 'Performance', '205/55R16', 3, 7, 130.25, 650);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (8, 'All-Season', '265/75R16', 4, 8, 115.50, 400);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (9, 'Winter', '225/65R17', 1, 9, 140.75, 500);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (10, 'Mud-Terrain', '245/70R17', 2, 10, 120.00, 300);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (11, 'Performance', '205/60R16', 3, 11, 125.50, 500);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (12, 'All-Season', '215/70R16', 4, 12, 115.00, 450);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (13, 'Radial', '255/60R18', 1, 13, 160.00, 400);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (14, 'Bias Ply', '225/75R15', 2, 14, 110.25, 350);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (15, 'All-Season', '245/65R17', 3, 15, 150.00, 550);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (16, 'Winter', '235/65R17', 4, 16, 145.75, 500);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (17, 'Mud-Terrain', '265/70R15', 1, 17, 130.50, 300);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (18, 'Performance', '195/55R16', 2, 18, 125.25, 650);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (19, 'All-Season', '215/60R15', 3, 19, 115.50, 600);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (20, 'Winter', '255/70R17', 4, 20, 125.75, 350);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (21, 'Radial', '225/55R16', 1, 21, 145.50, 400);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (22, 'Mud-Terrain', '235/60R16', 2, 22, 135.00, 450);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (23, 'Performance', '245/75R15', 3, 23, 110.25, 300);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (24, 'All-Season', '205/65R15', 4, 24, 120.00, 600);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (25, 'Mud-Terrain', '235/75R16', 1, 25, 125.50, 450);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (26, 'Radial', '255/65R17', 2, 26, 150.00, 500);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (27, 'Performance', '225/50R17', 3, 27, 130.25, 550);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (28, 'Mud-Terrain', '265/75R17', 4, 28, 135.75, 400);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (29, 'Radial', '235/70R16', 1, 29, 140.25, 500);
+
+INSERT INTO Tires (tire_id, tire_type, tire_size, tire_category_id, production_batch_id, price, quantity_in_stock)
+VALUES (30, 'All-Season', '245/65R15', 2, 30, 120.50, 350);
+
+select * from Tires;
+
+--Table-7
+
+--------------Quality_Control table---------------
+
+CREATE TABLE Quality_Control (
+    qc_id NUMBER,
+    tire_id NUMBER,
+    test_date DATE DEFAULT SYSDATE,
+    test_result VARCHAR2(50),
+    defects VARCHAR2(255),
+    CONSTRAINT pk_quality_control PRIMARY KEY (qc_id),
+    CONSTRAINT fk_qc_tire FOREIGN KEY (tire_id) REFERENCES Tires(tire_id) 
+);
+
+
+--Insert data into Quality_Control
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (1, 1, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (2, 2, SYSDATE, 'Failed', 'Cracks in sidewall');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (3, 3, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (4, 4, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (5, 5, SYSDATE, 'Failed', 'Tread separation');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (6, 6, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (7, 7, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (8, 8, SYSDATE, 'Failed', 'Air leakage from valve stem');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (9, 9, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (10, 10, SYSDATE, 'Failed', 'Uneven tread wear');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (11, 11, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (12, 12, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (13, 13, SYSDATE, 'Failed', 'Bubble in sidewall');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (14, 14, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (15, 15, SYSDATE, 'Failed', 'Defective tread pattern');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (16, 16, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (17, 17, SYSDATE, 'Failed', 'Lack of air pressure retention');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (18, 18, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (19, 19, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (20, 20, SYSDATE, 'Failed', 'Excessive noise');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (21, 21, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (22, 22, SYSDATE, 'Failed', 'Incorrect alignment');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (23, 23, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (24, 24, SYSDATE, 'Failed', 'Under-inflation detection');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (25, 25, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (26, 26, SYSDATE, 'Failed', 'Uneven wear pattern');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (27, 27, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (28, 28, SYSDATE, 'Failed', 'Sidewall puncture');
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (29, 29, SYSDATE, 'Passed', NULL);
+
+INSERT INTO Quality_Control (qc_id, tire_id, test_date, test_result, defects)
+VALUES (30, 30, SYSDATE, 'Failed', 'Cracked tread area');
+
+
+select * from Quality_Control;
+
+--Table-8
+
+---------------Creating Customers Table----------------------
+
+CREATE TABLE Customerssss (
+    customer_id NUMBER,
+    first_name VARCHAR2(100) NOT NULL,
+    last_name VARCHAR2(100) NOT NULL,
+    email VARCHAR2(100),
+    phone_number VARCHAR2(15),
+    address VARCHAR2(200),
+    CONSTRAINT pk_customers PRIMARY KEY (customer_id),
+    CONSTRAINT uf_email UNIQUE (email),
+    CONSTRAINT uc_phone_number UNIQUE (phone_number)
+);
+
+
+select * from Customerssss;
+select * from Sales_Orders;
+select * from Shippers;
+select * from Shipments;
+Select * from Payments;
+select * from Financial_Transactions;
+select * from   Equipment_Maintenance ;
+
+
+--insert data into Customerssss
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (1, 'Rajesh', 'Kumar', 'rajesh.kumar@example.com', '9876543210', 'No. 12, Main Street, Chennai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (2, 'Anjali', 'Ravi', 'anjali.ravi@example.com', '9988776655', 'Flat 34, Seaside Road, Madurai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (3, 'Vikram', 'Venkatesh', 'vikram.venkatesh@example.com', '9123456789', 'Bungalow 7, Park Avenue, Coimbatore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (4, 'Sanjana', 'Iyer', 'sanjana.iyer@example.com', '9876123456', 'No. 5, Lakeview Colony, Trichy');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (5, 'Arvind', 'Nair', 'arvind.nair@example.com', '9009876543', '102, Hilltop Road, Salem');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (6, 'Priya', 'Raghavan', 'priya.raghavan@example.com', '9998776655', 'No. 56, Green Park, Erode');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (7, 'Karthik', 'Sundar', 'karthik.sundar@example.com', '9122334455', 'House 18, South Street, Vellore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (8, 'Meera', 'Shankar', 'meera.shankar@example.com', '9876543218', 'Block A, Orchard Avenue, Tirunelveli');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (9, 'Suresh', 'Kumar', 'suresh.kumar@example.com', '9008765432', 'No. 34, Riverside Drive, Thanjavur');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (10, 'Shalini', 'Mohan', 'shalini.mohan@example.com', '9167892345', 'Ground Floor, New Estate, Kanchipuram');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (11, 'Ravi', 'Ramanan', 'ravi.ramanan@example.com', '9098765432', 'No. 45, Central Square, Madurai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (12, 'Nithya', 'Suresh', 'nithya.suresh@example.com', '9123451234', 'Flat 2, Metro Tower, Tiruchirappalli');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (13, 'Vijay', 'Chandran', 'vijay.chandran@example.com', '9776543210', 'No. 67, Freedom Road, Coimbatore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (14, 'Bhavani', 'Ramasamy', 'bhavani.ramasamy@example.com', '9001234567', 'No. 8, Sunflower Colony, Chennai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (15, 'Saravanan', 'Prakash', 'saravanan.prakash@example.com', '9145263789', 'House 4, Orchid Garden, Vellore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (16, 'Deepa', 'Raghavan', 'deepa.raghavan@example.com', '9871234567', 'Block C, Modern Road, Trichy');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (17, 'Kiran', 'Arun', 'kiran.arun@example.com', '9128347655', 'House 22, River Bank, Tanjore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (18, 'Arpita', 'Sengupta', 'arpita.sengupta@example.com', '9007673412', 'No. 21, Sunshine Place, Chennai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (19, 'Vishnu', 'Kumar', 'vishnu.kumar@example.com', '9876541230', 'No. 9, Beachside Road, Pondicherry');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (20, 'Sangeeta', 'Babu', 'sangeeta.babu@example.com', '9156789123', 'Apartment 3, Sky Tower, Chennai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (21, 'Madhavi', 'Rao', 'madhavi.rao@example.com', '9786543210', 'Block 9, Sunset Avenue, Cuddalore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (22, 'Anjali', 'Subramanian', 'anjali.subramanian@example.com', '9023456789', 'No. 14, City Square, Vellore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (23, 'Sathya', 'Nair', 'sathya.nair@example.com', '9223456789', 'Unit 6, Diamond Tower, Salem');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (24, 'Radhika', 'Shanmugam', 'radhika.shanmugam@example.com', '9887766554', 'Villa 8, Mango Road, Coimbatore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (25, 'Rajesh', 'Kumar', 'rajesh54.kumar@example.com', '9876543216', 'Street 15, Green Park, Chennai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (26, 'Swathi', 'Venkataraman', 'swathi.venkataraman@example.com', '9056723451', 'Ground 3, Moonlight Avenue, Madurai');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (27, 'Ananya', 'Vijayan', 'ananya.vijayan@example.com', '9009875432', 'No. 3, Rose Gardens, Vellore');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (28, 'Karthik', 'Suresh', 'karthik.suresh@example.com', '9123456780', 'Flat 2, Parkside Road, Pondicherry');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (29, 'Madhav', 'Chandran', 'madhav.chandran@example.com', '9321234567', 'Block 12, Star City, Salem');
+
+INSERT INTO Customerssss (customer_id, first_name, last_name, email, phone_number, address) 
+VALUES (30, 'Sunitha', 'Balasubramanian', 'sunitha.balasubramanian@example.com', '9776543218', 'Apartment 19, Horizon Building, Coimbatore');
+
+
+delete from  Customerssss where customer_id = 9;
+
+select * from customerssss;
+
+--Table-9
+
+---------------------------Sales Orders Table--------------------
+
+CREATE TABLE Sales_Orders (
+    order_id NUMBER,
+    customer_id NUMBER,
+    order_date DATE DEFAULT SYSDATE,
+    total_amount NUMBER(10, 2),
+    order_status VARCHAR2(50),
+    CONSTRAINT pk_sales_orders PRIMARY KEY (order_id),
+    CONSTRAINT fk_order_customer FOREIGN KEY (customer_id) REFERENCES Customerssss(customer_id),
+    CONSTRAINT chk_order_status CHECK (order_status IN ('Pending', 'Shipped', 'Delivered', 'Cancelled'))
+);
+
+
+--Insert data into Sales_Orders
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (1, 1, SYSDATE, 2500.00, 'Pending');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (2, 2, SYSDATE, 3200.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (3, 3, SYSDATE, 2750.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (4, 4, SYSDATE, 2300.00, 'Pending');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (5, 5, SYSDATE, 3000.00, 'Cancelled');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (6, 6, SYSDATE, 2400.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (7, 7, SYSDATE, 2200.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (8, 8, SYSDATE, 3500.00, 'Pending');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (9, 9, SYSDATE, 2700.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (10, 10, SYSDATE, 3000.00, 'Pending');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (11, 11, SYSDATE, 3100.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (12, 12, SYSDATE, 2850.00, 'Cancelled');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (13, 13, SYSDATE, 3300.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (14, 14, SYSDATE, 2600.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (15, 15, SYSDATE, 3100.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (16, 16, SYSDATE, 2400.00, 'Cancelled');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (17, 17, SYSDATE, 3200.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (18, 18, SYSDATE, 2900.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (19, 19, SYSDATE, 3400.00, 'Pending');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (20, 20, SYSDATE, 2300.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (21, 21, SYSDATE, 3100.00, 'Pending');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (22, 22, SYSDATE, 2800.00, 'Cancelled');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (23, 23, SYSDATE, 2700.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (24, 24, SYSDATE, 3300.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (25, 25, SYSDATE, 3200.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (26, 26, SYSDATE, 3000.00, 'Cancelled');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (27, 27, SYSDATE, 3500.00, 'Pending');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (28, 28, SYSDATE, 2900.00, 'Shipped');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (29, 29, SYSDATE, 3100.00, 'Delivered');
+
+INSERT INTO Sales_Orders (order_id, customer_id, order_date, total_amount, order_status)
+VALUES (30, 30, SYSDATE, 2500.00, 'Shipped');
+
+
+
+select * from Sales_Orders;
+
+--Table-10
+
+------------------------Creating Shippers Tables--------------------------
+
+CREATE TABLE Shippers (
+    shipper_id NUMBER,
+    name VARCHAR2(100) NOT NULL,
+    contact_number VARCHAR2(15),
+    address VARCHAR2(200),
+    CONSTRAINT pk_shippers PRIMARY KEY (shipper_id),
+    CONSTRAINT uq_contact_number UNIQUE (contact_number)
+);
+
+
+--Insert data into Shippers
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (1, 'Tire Express', '0462-123-4567', '123 Tire Rd, Tireville, TX');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (2, 'Rubber Wheels', '0462-234-5678', '456 Rubber Ave, Wheelsburg, CA');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (3, 'Speedy Shipments', '0462-345-6789', '789 Speedy St, Fastland, FL');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (4, 'Grip Transport', '0462-456-7890', '101 Grip Blvd, Rubber City, OH');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (5, 'Tire Movers', '0462-567-8901', '202 Move St, Cargo City, NY');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (6, 'Wheel Transporters', '0462-678-9012', '303 Wheel Way, Rimton, NJ');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (7, 'Rim Road Logistics', '0462-789-0123', '404 Rim Rd, Wheelersburg, PA');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (8, 'Wheel Hub Express', '0462-890-1234', '505 Hub St, Fastville, TX');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (9, 'Tire Trackers', '0462-901-2345', '606 Track Rd, Gripton, CA');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (10, 'Speed Tires Logistics', '0462-012-3456', '707 Speed Blvd, Tireland, IL');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (11, 'Rubber Wheels Transport', '0462-123-7890', '808 Wheels St, Tiremont, FL');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (12, 'Grip Transporters', '0462-234-8901', '909 Grip Blvd, Rubertown, TX');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (13, 'Fast Lane Shipping', '0462-345-9012', '101 Fast Lane, Cargo City, NY');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (14, 'Wheel Transport Express', '0462-456-0123', '202 Transport Rd, Rimton, CA');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (15, 'Tire Express Logistics', '0462-567-1234', '303 Express Blvd, Tireville, FL');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (16, 'Rubber Rush Transport', '0462-678-2345', '404 Rush St, Speedland, TX');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (17, 'Rim Logistics', '0462-789-3456', '505 Rim Way, Wheelsburg, CA');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (18, 'Tire Haulers', '0462-890-4567', '606 Haul Rd, Fastton, NJ');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (19, 'Tire Transporters', '0462-901-5678', '707 Transport Rd, Tirehill, IL');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (20, 'Rubber Express', '0462-012-6789', '808 Express Blvd, Cargoport, TX');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (21, 'Wheelers Inc.', '0462-562-790', '909 Wheelers Rd, Rimtown, NY');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (22, 'Speedy Tire Movers', '0462-234-890', '101 Speedy Blvd, Tireton, FL');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (23, 'Tire Transport Express', '0462-435-9012', '202 Tire Way, Gripton, TX');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (24, 'Rubber Transport Co.', '0462-456-013', '303 Transport Blvd, Rimport, NJ');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (25, 'Wheel Haulers', '0462-567-468', '404 Haul St, Speedport, CA');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (26, 'Tire Mover Logistics', '0462-678-234', '505 Mover Rd, Cargoport, TX');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (27, 'Grip Tire Haulers', '0462-189-345', '606 Haul Blvd, Tireland, FL');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (28, 'Rim Movers Express', '0462-898-457', '707 Movers Way, Rimcity, NJ');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (29, 'Tire Logistics', '0462-901-568', '808 Logistics Rd, Speedville, CA');
+
+INSERT INTO Shippers (shipper_id, name, contact_number, address)
+VALUES (30, 'Rubber Express Transport', '0462-012-679', '909 Express Rd, Cargo City, IL');
+
+select * from Shippers;
+
+
+
+
+
+-------------------------- Creating Shipments table --------------------
+
+--Table-11
+
+CREATE TABLE Shipments (
+    shipment_id NUMBER,
+    order_id NUMBER,
+    shipper_id NUMBER,
+    shipment_date DATE DEFAULT SYSDATE,
+    estimated_delivery_date DATE,
+    tracking_number VARCHAR2(100),
+    CONSTRAINT pk_shipmentss PRIMARY KEY (shipment_id),
+    CONSTRAINT fk_shipmentorders FOREIGN KEY (order_id) REFERENCES Sales_Orders(order_id),
+    CONSTRAINT fk_shipment_shippers FOREIGN KEY (shipper_id) REFERENCES Shippers(shipper_id),
+    CONSTRAINT chk_estimated_deliverydate CHECK (estimated_delivery_date >= shipment_date),
+    CONSTRAINT unitracking_number UNIQUE (tracking_number)
+);
+
+
+
+--Insert data into Shipments
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (1, 1, 1, SYSDATE, SYSDATE + 7, 'TIRE12345');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (2, 2, 2, SYSDATE, SYSDATE + 5, 'TIRE12346');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (3, 3, 3, SYSDATE, SYSDATE + 10, 'TIRE12347');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (4, 4, 4, SYSDATE, SYSDATE + 8, 'TIRE12348');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (5, 5, 5, SYSDATE, SYSDATE + 6, 'TIRE12349');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (6, 6, 6, SYSDATE, SYSDATE + 12, 'TIRE12350');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (7, 7, 7, SYSDATE, SYSDATE + 9, 'TIRE12351');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (8, 8, 8, SYSDATE, SYSDATE + 7, 'TIRE12352');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (9, 9, 9, SYSDATE, SYSDATE + 6, 'TIRE12353');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (10, 10, 10, SYSDATE, SYSDATE + 5, 'TIRE12354');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (11, 11, 11, SYSDATE, SYSDATE + 14, 'TIRE12355');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (12, 12, 12, SYSDATE, SYSDATE + 10, 'TIRE12356');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (13, 13, 13, SYSDATE, SYSDATE + 11, 'TIRE12357');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (14, 14, 14, SYSDATE, SYSDATE + 7, 'TIRE12358');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (15, 15, 15, SYSDATE, SYSDATE + 8, 'TIRE12359');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (16, 16, 16, SYSDATE, SYSDATE + 9, 'TIRE12360');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (17, 17, 17, SYSDATE, SYSDATE + 12, 'TIRE12361');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (18, 18, 18, SYSDATE, SYSDATE + 10, 'TIRE12362');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (19, 19, 19, SYSDATE, SYSDATE + 8, 'TIRE12363');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (20, 20, 20, SYSDATE, SYSDATE + 6, 'TIRE12364');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (21, 21, 21, SYSDATE, SYSDATE + 7, 'TIRE12365');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (22, 22, 22, SYSDATE, SYSDATE + 9, 'TIRE12366');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (23, 23, 23, SYSDATE, SYSDATE + 5, 'TIRE12367');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (24, 24, 24, SYSDATE, SYSDATE + 7, 'TIRE12368');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (25, 25, 25, SYSDATE, SYSDATE + 8, 'TIRE12369');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (26, 26, 26, SYSDATE, SYSDATE + 9, 'TIRE12370');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (27, 27, 27, SYSDATE, SYSDATE + 6, 'TIRE12371');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (28, 28, 28, SYSDATE, SYSDATE + 10, 'TIRE12372');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (29, 29, 29, SYSDATE, SYSDATE + 12, 'TIRE12373');
+
+INSERT INTO Shipments (shipment_id, order_id, shipper_id, shipment_date, estimated_delivery_date, tracking_number)
+VALUES (30, 30, 30, SYSDATE, SYSDATE + 11, 'TIRE12374');
+
+select * from Shipments;
+
+
+--Table-12
+
+----------------Creating Payments table------------------
+
+CREATE TABLE Payments (
+    payment_id NUMBER,
+    order_id NUMBER,
+    payment_date DATE DEFAULT SYSDATE,
+    amount_paid NUMBER(10, 2),
+    payment_method VARCHAR2(50),
+    CONSTRAINT pk_payments PRIMARY KEY (payment_id),
+    CONSTRAINT fk_payment_order FOREIGN KEY (order_id) REFERENCES Sales_Orders(order_id),
+    CONSTRAINT chk_amount_paid CHECK (amount_paid > 0),
+    CONSTRAINT chk_payment_method CHECK (payment_method IN ('Credit Card', 'Debit Card', 'PayPal', 'Cash'))
+);
+
+
+--Insert data into Payments
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (1, 1, SYSDATE, 2500.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (2, 2, SYSDATE, 3200.00, 'Debit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (3, 3, SYSDATE, 2750.00, 'PayPal');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (4, 4, SYSDATE, 2300.00, 'Cash');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (5, 5, SYSDATE, 3000.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (6, 6, SYSDATE, 2400.00, 'Debit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (7, 7, SYSDATE, 2200.00, 'PayPal');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (8, 8, SYSDATE, 3500.00, 'Cash');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (9, 9, SYSDATE, 2700.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (10, 10, SYSDATE, 3000.00, 'Debit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (11, 11, SYSDATE, 3100.00, 'PayPal');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (12, 12, SYSDATE, 2850.00, 'Cash');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (13, 13, SYSDATE, 3300.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (14, 14, SYSDATE, 2600.00, 'Debit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (15, 15, SYSDATE, 3100.00, 'PayPal');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (16, 16, SYSDATE, 2400.00, 'Cash');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (17, 17, SYSDATE, 3200.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (18, 18, SYSDATE, 2900.00, 'Debit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (19, 19, SYSDATE, 3400.00, 'PayPal');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (20, 20, SYSDATE, 2300.00, 'Cash');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (21, 21, SYSDATE, 3100.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (22, 22, SYSDATE, 2800.00, 'Debit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (23, 23, SYSDATE, 2700.00, 'PayPal');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (24, 24, SYSDATE, 3300.00, 'Cash');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (25, 25, SYSDATE, 3200.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (26, 26, SYSDATE, 3000.00, 'Debit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (27, 27, SYSDATE, 3500.00, 'PayPal');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (28, 28, SYSDATE, 2900.00, 'Cash');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (29, 29, SYSDATE, 3100.00, 'Credit Card');
+
+INSERT INTO Payments (payment_id, order_id, payment_date, amount_paid, payment_method)
+VALUES (30, 30, SYSDATE, 2500.00, 'Debit Card');
+
+
+Select * from Payments;
+select * from Financial_Transactions;
+select * from   Equipment_Maintenance ;
+
+
+
+
+
+
+--Table-13
+
+---------Creating Financial_Transactions table---------
+
+CREATE TABLE Financial_Transactions (
+    transaction_id NUMBER,
+    transaction_date DATE DEFAULT SYSDATE,
+    amount NUMBER(10, 2),
+    transaction_type VARCHAR2(50),
+    category VARCHAR2(50),
+    CONSTRAINT pk_financial_transactions PRIMARY KEY (transaction_id),
+    CONSTRAINT chk_transaction_type CHECK (transaction_type IN ('Sale', 'Purchase'))
+);
+
+--Insert data into Financial_Transactions 
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (1, SYSDATE, 5000.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (2, SYSDATE, 3000.00, 'Purchase', 'Raw Material');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (3, SYSDATE, 1500.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (4, SYSDATE, 2200.00, 'Purchase', 'Equipment');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (5, SYSDATE, 3500.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (6, SYSDATE, 1800.00, 'Purchase', 'Raw Material');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (7, SYSDATE, 4000.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (8, SYSDATE, 2500.00, 'Purchase', 'Tools');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (9, SYSDATE, 2700.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (10, SYSDATE, 3000.00, 'Purchase', 'Raw Material');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (11, SYSDATE, 3200.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (12, SYSDATE, 2100.00, 'Purchase', 'Equipment');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (13, SYSDATE, 1500.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (14, SYSDATE, 2200.00, 'Purchase', 'Tools');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (15, SYSDATE, 3600.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (16, SYSDATE, 1900.00, 'Purchase', 'Raw Material');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (17, SYSDATE, 4800.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (18, SYSDATE, 2800.00, 'Purchase', 'Tools');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (19, SYSDATE, 3100.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (20, SYSDATE, 3300.00, 'Purchase', 'Equipment');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (21, SYSDATE, 3400.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (22, SYSDATE, 2000.00, 'Purchase', 'Raw Material');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (23, SYSDATE, 2900.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (24, SYSDATE, 3100.00, 'Purchase', 'Tools');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (25, SYSDATE, 4500.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (26, SYSDATE, 2500.00, 'Purchase', 'Equipment');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (27, SYSDATE, 4700.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (28, SYSDATE, 3200.00, 'Purchase', 'Raw Material');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (29, SYSDATE, 5000.00, 'Sale', 'Tire Manufacturing');
+
+INSERT INTO Financial_Transactions (transaction_id, transaction_date, amount, transaction_type, category)
+VALUES (30, SYSDATE, 3800.00, 'Purchase', 'Tools');
+
+
+
+
+select * from Financial_Transactions;
+select * from   Equipment_Maintenance ;
+
+--Table-14
+
+----Creating Financial_Transaction-------------------
+
+CREATE TABLE Equipment_Maintenance (
+    maintenance_id NUMBER,
+    equipment_id NUMBER,
+    maintenance_date DATE DEFAULT SYSDATE,
+    maintenance_description VARCHAR2(255),
+    cost NUMBER(10, 2),
+    CONSTRAINT pk_equipment_maintenance PRIMARY KEY (maintenance_id)
+);
+
+--Insert data into Equipment_Maintenance
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (1, 101, SYSDATE, 'Routine maintenance for tire press machine', 500.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (2, 102, SYSDATE, 'Replacement of worn-out bearings in tire cutter', 300.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (3, 103, SYSDATE, 'Oil change and lubrication of extrusion machine', 150.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (4, 104, SYSDATE, 'Calibration and inspection of molding press', 250.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (5, 105, SYSDATE, 'Repairs to tire curing oven heating elements', 450.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (6, 106, SYSDATE, 'Cleaning and testing of rubber mixing machine', 200.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (7, 107, SYSDATE, 'Inspection and replacement of conveyor belts', 100.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (8, 108, SYSDATE, 'Replacement of air filters in the vulcanization machine', 120.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (9, 109, SYSDATE, 'Routine inspection and repair of tire trimmer', 180.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (10, 110, SYSDATE, 'Replacement of hydraulic seals in the tire press', 350.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (11, 111, SYSDATE, 'Repairs to worn-out drum bearings in the extruder', 500.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (12, 112, SYSDATE, 'Lubrication and tensioning of tire molding equipment', 130.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (13, 113, SYSDATE, 'Electrical inspection and repairs for vulcanization machine', 450.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (14, 114, SYSDATE, 'Replacement of worn-out tires on the conveyor system', 220.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (15, 115, SYSDATE, 'Inspection and repair of safety valves on rubber mixer', 300.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (16, 116, SYSDATE, 'Routine calibration of mixing and molding machines', 170.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (17, 117, SYSDATE, 'Replacement of control system parts for tire cutter', 400.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (18, 118, SYSDATE, 'Repairs to temperature control unit of curing oven', 280.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (19, 119, SYSDATE, 'Regular cleaning and maintenance of tire testing equipment', 150.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (20, 120, SYSDATE, 'Recalibration of weight measuring equipment for tire production', 200.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (21, 121, SYSDATE, 'Replacement of worn-out parts on the rubber extruder', 250.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (22, 122, SYSDATE, 'Inspection of steam lines and calibration of curing equipment', 320.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (23, 123, SYSDATE, 'Repairs to pneumatic system in tire molding machine', 380.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (24, 124, SYSDATE, 'Routine maintenance and cleaning of extruder system', 210.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (25, 125, SYSDATE, 'Replacement of worn-out rollers in molding press', 280.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (26, 126, SYSDATE, 'Inspection and replacement of gaskets in curing oven', 250.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (27, 127, SYSDATE, 'Routine maintenance and lubrication of trimming machine', 150.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (28, 128, SYSDATE, 'Repairs to electrical control systems for extrusion line', 400.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (29, 129, SYSDATE, 'Recalibration of heat sensors for vulcanization equipment', 330.00);
+
+INSERT INTO Equipment_Maintenance (maintenance_id, equipment_id, maintenance_date, maintenance_description, cost)
+VALUES (30, 130, SYSDATE, 'Replacement of worn-out bearings on conveyor belts', 260.00);
+
+select * from   Equipment_Maintenance ;
+
+
+
+
+
+
+
+

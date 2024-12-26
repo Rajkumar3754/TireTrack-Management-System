@@ -1,7 +1,7 @@
 
 --                                              SQL PROJECT                       Name: U.Rajkumar
---                                                                                  Phno:9360550686  
---                                                                                  email:u.rajkumar2001@gmail.com
+--                                                                                Phno:9360550686  
+--                                                                                email:u.rajkumar2001@gmail.com
                                                         
 --                                          TireTrack Management System
 

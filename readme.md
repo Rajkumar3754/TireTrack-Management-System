@@ -2,6 +2,10 @@
 Core Objective
 The TireTrack Management System is designed to streamline and optimize the tire manufacturing process from start to finish. It provides comprehensive tools for tracking production, managing inventory, ensuring quality, automating sales processes, and maintaining machinery. The system empowers manufacturers to achieve operational efficiency, reduce waste, and enhance product quality through data-driven decision-making.
 Features
+
+
+
+
 🏭 **Production Management**: Track the entire lifecycle of tire production, manage raw materials, and monitor batch outputs.
 📦 **Inventory Control**: Manage stock levels and categorize tires by model, size, and category.
 🚚 **Order and Shipment Management**: Automate order tracking, shipment scheduling, and supplier/customer management.

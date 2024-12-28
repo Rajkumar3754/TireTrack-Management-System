@@ -114,17 +114,10 @@ Designed and normalized database tables for efficient data storage and retrieval
 
 ---
 
-## Screenshots
-
-### Dashboard
 
 
 
-### Order Management
 
-
-
----
 
 ## Contribution
 
@@ -143,7 +136,7 @@ This project is licensed under the [MIT License](LICENSE).
 For questions or support, please contact:
 
 - **Author:** Rajkumar
-- **Email:** [rajkumar@example.com](mailto\:rajkumar@example.com)
+- **Email:** u.rajkumar2001@gmail.com
 
 
 

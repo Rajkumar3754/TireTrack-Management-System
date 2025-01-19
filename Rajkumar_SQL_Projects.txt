@@ -58,9 +58,6 @@ WHERE unit_price > (
 );
 
 
-
-
-
 --Data Dictionary
 select * from user_tables;
 

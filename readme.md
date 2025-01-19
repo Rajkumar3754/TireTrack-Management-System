@@ -1,82 +1,94 @@
-TireTrack Management System - Workflow System for Tire Manufacturing (Build 1.0.0.0)
+# TireTrack Management System📊
 
-TireTrack Management System is a robust workflow system designed to efficiently manage the entire tire manufacturing process, from raw materials procurement to finished product distribution. This system includes production tracking, inventory management, quality control, and sales process automation features tailored for tire manufacturers.
 
-Key Features:
+**Workflow System for Tire Manufacturing (Build 1.0.0.0)**
 
-Production Management
+---
 
-Track the complete manufacturing lifecycle of tires.
+TireTrack Management System is a robust workflow system designed to efficiently manage the entire tire manufacturing process, from raw materials procurement to finished product distribution. This system provides production tracking, inventory management, quality control, and sales process automation features tailored for tire manufacturers.
 
-Manage raw materials, production batches, and quality control inspections.
+---
 
-Record production steps and monitor batch-wise outputs.
+## Key Features
 
-Inventory Control
+### 🏭 Production Management
 
-Monitor stock levels of raw materials, finished tires, and defective units.
+- Track the complete manufacturing lifecycle of tires.
+- Manage raw materials, production batches, and quality control inspections.
+- Record production steps and monitor batch-wise outputs.
 
-Categorize tires by model, size, and product categories for efficient inventory tracking.
+### 📦 Inventory Control
 
-Order and Shipment Management
+- Monitor stock levels of raw materials, finished tires, and defective units.
+- Categorize tires by model, size, and product categories for efficient inventory tracking.
 
-Manage customer orders with real-time order statuses such as "Pending," "Shipped," or "Delivered."
+### 🚚 Order and Shipment Management
 
-Automate shipment scheduling and track shipments with unique tracking numbers.
+- Manage customer orders with real-time order statuses such as "Pending," "Shipped," or "Delivered."
+- Automate shipment scheduling and track shipments with unique tracking numbers.
+- Record and manage supplier and customer details for seamless communication.
 
-Record and manage supplier and customer details for seamless communication.
+### ✅ Quality Assurance
 
-Quality Assurance
+- Record quality control inspections for each tire batch.
+- Mark tires as "Passed" or "Defective" based on quality control results.
 
-Record quality control inspections for each tire batch.
+### 💳 Financial Management
 
-Mark tires as "Passed" or "Defective" based on quality control results.
+- Manage payments for customer orders with multiple payment options, including credit cards, debit cards, PayPal, and cash.
+- Track financial transactions, such as sales and purchases.
+- Integrate payment records with sales orders for transparent financial reporting.
 
-Financial Management
+### 🔧 Maintenance Tracking
 
-Manage payments for customer orders with multiple payment options, including credit cards, debit cards, PayPal, and cash.
+- Log maintenance activities for production equipment.
+- Monitor maintenance costs and ensure the timely upkeep of machinery.
 
-Track financial transactions, such as sales and purchases.
-
-Integrate payment records with sales orders for transparent financial reporting.
-
-Maintenance Tracking
-
-Log maintenance activities for production equipment.
-
-Monitor maintenance costs and ensure the timely upkeep of machinery.
-
-Database Management
+### 🗄️ Database Management
 
 Designed and normalized database tables for efficient data storage and retrieval:
 
-Raw Materials: Records details of materials used in production.
+- **Raw Materials:** Records details of materials used in production.
 
-Production Batches: Tracks tire batches and the raw materials used.
+- **Production Batches:** Tracks tire batches and the raw materials used.
 
-Tires: Stores information about finished products.
+- **Tires:** Stores information about finished products.
 
-Quality Control: Logs quality inspections and results.
+- **Quality Control:** Logs quality inspections and results.
 
-Sales Orders: Manages customer orders and their statuses.
+- **Sales Orders:** Manages customer orders and their statuses.
 
-Shipments: Tracks order shipments and delivery statuses.
+- **Shipments:** Tracks order shipments and delivery statuses.
 
-Customers: Stores customer details for order processing.
+- **Customers:** Stores customer details for order processing.
 
-Suppliers: Records supplier details for procurement.
+- **Suppliers:** Records supplier details for procurement.
 
-Payments: Tracks customer payments for sales orders.
+- **Payments:** Tracks customer payments for sales orders.
 
-Equipment Maintenance: Logs maintenance activities for production machinery.
+- **Equipment Maintenance:** Logs maintenance activities for production machinery.
 
-Ensured robust primary and foreign key relationships between tables for data integrity.
+- Ensured robust primary and foreign key relationships between tables for data integrity.
 
-Validated data population with over 30 records per table.
+- Validated data population with over 30 records per table.
 
-Technologies Used:
+---
 
-Programming Languages: SQL
+## Technologies Used
 
-Database: Oracle SQL 11G
-Development Tools: SQL Developer 23.1.1
+### 💻 Programming Languages
+
+- SQL
+
+### 🗄️ Database
+
+- Oracle SQL 11G
+
+### 🛠️ Development Tools
+
+- SQL Developer 23.1.1
+
+---
+
+
+

@@ -20,7 +20,44 @@ select * from Shippers;
 select * from Shipments;
 Select * from Payments;
 select * from Financial_Transactions;
-select * from  Equipment_Maintenance ;
+select * from  Equipment_Maintenance;
+
+
+select material_name,unit_price from Raw_Materials where unit_price > 150;
+
+select * from supplierss where contact_person like '%r';
+
+
+select tire_id, test_result ,nvl(defects,'no defect') from Quality_Control; 
+
+
+--view
+create view transaction_view as select  transaction_date,category,transaction_type,amount from Financial_Transactions;
+
+select * from transaction_view;
+
+--index
+create index indx_tires on Tires(tire_type,price,quantity_in_stock);
+
+select * from Tires where  price > 92 and quantity_in_stock >380;
+
+
+--joins
+SELECT pb.batch_id, pb.batch_number, ps.step_name,pb.quantity_produced
+FROM Production_Batches pb INNER JOIN Production_Steps ps ON pb.step_id = ps.step_id;
+
+--subquery
+--Find the raw materials that have a unit price higher than the average unit price of materials supplied by the same supplier.
+
+SELECT material_id, material_name, unit_price, supplier_id
+FROM Raw_Materials
+WHERE unit_price > (
+    SELECT AVG(unit_price)
+    FROM Raw_Materials
+    WHERE supplier_id = Raw_Materials.supplier_id
+);
+
+
 
 
 

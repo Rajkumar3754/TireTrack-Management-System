@@ -86,7 +86,7 @@ Designed and normalized database tables for efficient data storage and retrieval
 
 ### 🛠️ Development Tools
 
-- SQL Developer 23.1.1
+- SQL Developer 24.3.1
 
 ---
 
